@@ -38,4 +38,251 @@ Loaded GHCi configuration from /Users/nanami/bprog2022/.ghci
 
 <interactive>:12:1: error: Variable not in scope: double :: t0 -> t
 2022-05-19 16:02:00.410939
+>>> GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /Users/nanami/bprog2022/.ghci
+2022-06-16 14:48:56.144236
+>>> :e src/First.hs
+:l src/First.hs
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+Ok, no modules loaded.
+2022-06-16 14:54:25.330105
+>>> [1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 14:54:25.340255
+>>> double 3
+6
+2022-06-16 14:54:38.988163
+>>> quadruple 3
+12
+2022-06-16 14:54:50.505062
+>>> hoge = 3,1,4,1,5 :: Int
+
+<interactive>:5:9: error: parse error on input ‘,’
+2022-06-16 14:56:19.708183
+>>> head [1,2,3,4,5]
+1
+2022-06-16 14:56:40.370869
+>>> product [1,2,3,4,5]
+120
+2022-06-16 14:57:01.699628
+>>> double 2 + double 3
+10
+2022-06-16 14:57:24.114214
+>>> double (3 + 2)
+10
+2022-06-16 14:58:07.308827
+>>> double 3 + 2
+8
+2022-06-16 14:58:20.607957
+>>> take 3 {3,1,4,1,5]
+
+<interactive>:11:9: error: parse error on input ‘3’
+2022-06-16 15:01:18.786305
+>>> take 3 [3,1,4,1,5]
+[3,1,4]
+2022-06-16 15:01:35.01401
+>>> take (double 2) [3,1,4,1,5]
+[3,1,4,1]
+2022-06-16 15:04:48.508372
+>>> quadruple (5+3)
+32
+2022-06-16 15:10:36.304322
 >>> 
+2022-06-16 15:12:06.30948
+>>> 
+2022-06-16 15:12:57.27657
+>>> double
+
+<interactive>:17:1: error:
+    • No instance for (Show (Int -> Int)) arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In a stmt of an interactive GHCi command: print it
+2022-06-16 15:13:05.816261
+>>> doule
+
+<interactive>:18:1: error:
+    • Variable not in scope: doule
+    • Perhaps you meant ‘double’ (line 4)
+2022-06-16 15:13:19.043987
+>>> take (double 2) [1,2,3,4,5]
+[1,2,3,4]
+2022-06-16 15:15:13.235139
+>>> take (double 3) [7,6,5,3,1,5,2,8,3]
+[7,6,5,3,1,5]
+2022-06-16 15:16:04.679774
+>>> [1 .. 10]
+[1,2,3,4,5,6,7,8,9,10]
+2022-06-16 15:20:08.336266
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 15:20:58.545555
+>>> factorial 3
+6
+2022-06-16 15:22:08.116405
+>>> factorial 5
+120
+2022-06-16 15:22:16.868809
+>>> 
+2022-06-16 15:38:08.535724
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs =sum xs `div' length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs)(length xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:13:26: error: parse error on input ‘length’
+   |
+13 | average xs =sum xs `div' length xs
+   |                          ^^^^^^
+Failed, no modules loaded.
+2022-06-16 15:38:10.130234
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div' length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs)(length xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:13:27: error: parse error on input ‘length’
+   |
+13 | average xs = sum xs `div' length xs
+   |                           ^^^^^^
+Failed, no modules loaded.
+2022-06-16 15:39:46.416905
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div' length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs) (length xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+
+src/First.hs:13:27: error: parse error on input ‘length’
+   |
+13 | average xs = sum xs `div' length xs
+   |                           ^^^^^^
+Failed, no modules loaded.
+2022-06-16 15:40:29.881096
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div` length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs) (length xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 15:40:47.097104
+>>> :t take 3 [1,2,3,4,5]
+take 3 [1,2,3,4,5] :: Num a => [a]
+2022-06-16 15:50:04.336462
+>>> init [1 .. 5]
+[1,2,3,4]
+2022-06-16 16:06:59.0608
+>>> init 2
+
+<interactive>:32:1: error:
+    • Non type-variable argument in the constraint: Num [a]
+      (Use FlexibleContexts to permit this)
+    • When checking the inferred type
+        it :: forall {a}. Num [a] => [a]
+2022-06-16 16:11:40.005575
+>>> init [2]
+[]
+2022-06-16 16:11:56.013513
+>>> :e
+   1  module First where
+   2  
+   3  double :: Int -> Int
+   4  double x = x + x
+   5  
+   6  quadruple :: Int -> Int
+   7  quadruple x = double (double x)
+   8  
+   9  factorial :: Integer -> Integer
+  10  factorial n = product [1 .. n]
+  11  
+  12  average :: [Int] -> Int
+  13  average xs = sum xs `div` length xs
+  14  
+  15  ave :: [Int] -> Int
+  16  ave xs = div (sum xs) (length xs)
+  17  
+  18  myinit :: [a] -> [a]
+  19  myinit [x] = []
+  20  myinit (x:xs) = x : (init xs)
+[1 of 1] Compiling First            ( src/First.hs, interpreted )
+Ok, one module loaded.
+2022-06-16 16:14:24.249399
+>>> myinit [1 .. 5]
+[1,2,3,4]
+2022-06-16 16:14:36.517137
+>>> myinit []
+*** Exception: src/First.hs:(19,1)-(20,29): Non-exhaustive patterns in function myinit
+
+2022-06-16 16:14:57.116544
+>>> :q
+Leaving GHCi.
