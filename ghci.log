@@ -518,3 +518,40 @@ abcdefghijklmnopqrstuvwxyz
 2022-06-30 15:53:33.585337
 >>> :q
 Leaving GHCi.
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /Users/nanami/bprog2022/.ghci
+2022-07-14 15:11:18.253799
+>>> a:l src/Caesar.hs
+
+<interactive>:1:9: error:
+    Not in scope: ‘Caesar.hs’
+    No module named ‘Caesar’ is imported.
+2022-07-14 15:11:34.265925
+>>> :e src/Caesar.hs
+:l src/Caesar.hs
+   1  module Caesar where
+   2  
+   3  import Date.Char
+   4  
+   5  let2int :: Char -> Int
+   6  let2int c = ord c
+Ok, no modules loaded.
+2022-07-14 15:12:54.022551
+>>> [1 of 1] Compiling Caesar           ( src/Caesar.hs, interpreted )
+
+src/Caesar.hs:3:1: error:
+    Could not find module ‘Date.Char’
+    Perhaps you meant Data.Char (from base-4.15.1.0)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+3 | import Date.Char
+  | ^^^^^^^^^^^^^^^^
+Failed, no modules loaded.
+2022-07-14 15:12:54.029331
+>>> let2int 'a'
+
+<interactive>:4:1: error:
+    Variable not in scope: let2int :: Char -> t
+2022-07-14 15:13:13.415504
+>>> :q
+Leaving GHCi.
