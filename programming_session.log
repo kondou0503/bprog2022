@@ -1,0 +1,148 @@
+Script started on Thu Oct  6 15:08:27 2022
+command: bash
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[?1034hbash-3.2$ a[Ka[Klghc[K[K[K[Klghci src/Rec.hs
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /Users/nanami/bprog2022/.ghci
+[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:10:19.207708
+[?1h=>>> product []
+[?1l>1
+2022-10-06 15:13:14.763324
+[?1h=>>> product [1 .. 10]
+[?1l>3628800
+2022-10-06 15:13:42.529377
+[?1h=>>> [[Kproduct [ 3[K[K3, 1,[K[K[K1,4[K5]
+[?1l>15
+2022-10-06 15:14:18.205099
+[?1h=>>> product [9[K100[K[K[K0 .. 100[K]
+[?1l>0
+2022-10-06 15:14:57.7811
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:15:08.87864
+[?1h=>>> product [3, [K1,5]
+[?1l>0
+2022-10-06 15:15:23.896971
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:6:18: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num a) arising from the literal ‘1’
+      Possible fix:
+        add (Num a) to the context of
+          the type signature for:
+            product :: forall a. [a] -> a
+    • In the expression: 1
+      In an equation for ‘product’: product [] = 1[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m6 |[0m[0m product []     = [;1m[31m1[0m[0m
+[;1m[34m  |[0m[0m[;1m[31m                  ^[0m[0m
+Failed, no modules loaded.
+2022-10-06 15:30:07.628048
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:31:27.598198
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 15:42:31.808738
+[?1h=>>> drop [3,1,4,1,5]
+[?1l>
+[;1m<interactive>:10:6: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Couldn't match expected type ‘Int’ with actual type ‘[a0]’
+    • In the first argument of ‘drop’, namely ‘[3, 1, 4, 1, ....]’
+      In the expression: drop [3, 1, 4, 1, ....]
+      In an equation for ‘it’: it = drop [3, 1, 4, ....][0m[0m
+2022-10-06 15:42:39.130301
+[?1h=>>> drop 2 [3,1,4,1,5]
+[?1l>[4,1,5]
+2022-10-06 15:42:44.720769
+[?1h=>>> do[Krop5[K 5 [3,1,5[K4,1,5]
+[?1l>[]
+2022-10-06 15:42:58.107375
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:15:10: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Illegal type: ‘1’ Perhaps you intended to use DataKinds[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m15 |[0m[0m init :: [[;1m[31m1[0m[0m]-> [a]
+[;1m[34m   |[0m[0m[;1m[31m          ^[0m[0m
+Failed, no modules loaded.
+2022-10-06 16:01:07.208817
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:10:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Equations for ‘drop’ have different numbers of arguments
+      src/Rec.hs:10:1-12
+      src/Rec.hs:11:1-20[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m10 |[0m[0m [;1m[31mdrop xs = xs[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m ^^^^^^^^^^^^...[0m[0m
+Failed, no modules loaded.
+2022-10-06 16:01:18.900598
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:11:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m
+    Pattern match is redundant
+    In an equation for ‘drop’: drop 0 (x : xs) = ...[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m11 |[0m[0m [;1m[35mdrop 0 (x:xs) = x:xs[0m[0m
+[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^[0m[0m
+Ok, one module loaded.
+2022-10-06 16:01:41.49607
+[?1h=>>> init [3,1,4,1,5]
+[?1l>[3,1,4,1]
+2022-10-06 16:02:14.610235
+[?1h=>>> a[K:r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 16:03:09.83166
+[?1h=>>> init []
+[?1l>*** Exception: karaya-
+CallStack (from HasCallStack):
+  error, called at src/Rec.hs:15:11 in main:Rec
+2022-10-06 16:03:15.261822
+[?1h=>>> :r
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+
+[;1msrc/Rec.hs:23:7: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: otherwides :: Bool
+    • Perhaps you meant ‘otherwise’ (imported from Prelude)[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m23 |[0m[0m     | [;1m[31motherwides[0m[0m = error "negative number"
+[;1m[34m   |[0m[0m[;1m[31m       ^^^^^^^^^^[0m[0m
+Failed, no modules loaded.
+2022-10-06 16:10:19.649992
+[?1h=>>> :d[Kr
+[?1l>[1 of 1] Compiling Rec              ( src/Rec.hs, interpreted )
+Ok, one module loaded.
+2022-10-06 16:10:36.657377
+[?1h=>>> fa [Kc 10
+[?1l>3628800
+2022-10-06 16:10:42.926554
+[?1h=>>> fac -2
+[?1l>
+[;1m<interactive>:22:5: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num (Int -> Int)) arising from a use of ‘-’
+        (maybe you haven't applied a function to enough arguments?)
+    • In the expression: fac - 2
+      In an equation for ‘it’: it = fac - 2[0m[0m
+2022-10-06 16:10:46.352891
+[?1h=>>> fac -2[K[K[K[K[K[Kfav[Kc (-2)
+[?1l>*** Exception: negative number
+CallStack (from HasCallStack):
+  error, called at src/Rec.hs:23:19 in main:Rec
+2022-10-06 16:12:39.849269
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+bash-3.2$ git add s[K.
